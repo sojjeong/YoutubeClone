@@ -1,0 +1,97 @@
+/* 변수화 하기 */
+:root {
+  --text-color: #715179;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d1c4e9;
+}
+
+.navbar__logo {
+  font-size: 24px;
+}
+
+.navbar__logo i {
+  color: var(--text-color);
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar__menu li {
+  /* 마우스 올렸을 때, 백그라운드 영역을 더 넓게 만들기 위해서 패딩을 줌 */
+  padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+  background-color: #fff7ff;
+  border-radius: 4px;
+}
+
+.navbar__icons {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.navbar__icons li {
+  padding: 8px 12px;
+}
+
+.navbar__toggleButton {
+  display: none;
+  position: absolute;
+  /* 오른쪽에서 32px 떨이전 곳에 놓는다 */
+  right: 32px;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* 너비가 없으면 align-items 가 안잡힘 */
+    width: 100%;
+  }
+
+  /* 하이라이트를 전체 너비에 주기 */
+  .navbar__menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar__icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar__toggleButton {
+    display: block;
+  }
+
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
+}
