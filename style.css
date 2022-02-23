@@ -4,8 +4,8 @@
   --black-color: #140a00;
   --blue-color: #045fd4;
   --red-color: #ff0000;
-  --grey-color: #909090;
-  --gery-light-color: #e0e0e0;
+  --gray-color: #909090;
+  --gray-light-color: #e0e0e0;
 
   /* size */
   --padding: 12px;
@@ -107,4 +107,98 @@ header .icons .fa-search {
 
 .info .metadata .titleAndButton .moreButton {
   height: 100%;
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--gray-color);
+}
+
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+}
+
+.info .actions button i {
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding) / 2);
+  font-size: 16px;
+}
+
+.info .actions button i.active {
+  color: var(--blue-color);
+}
+
+.info .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--gray-light-color);
+  border-bottom: 1px solid var(--gray-light-color);
+}
+
+.info .channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+
+.info .channel .metadata .info .name {
+  font-size: var(--font-medium);
+}
+
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--gray-color);
+}
+
+.info .channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+}
+
+.upNext {
+  padding: 0 var(--padding);
+}
+
+/* upNext 의 자식 title만 적용되도록 */
+.upNext > .title {
+  font-size: var(--font-medium);
+  color: var(--gray-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.upNext .item {
+  display: flex;
+}
+
+.upNext .item .img {
+  flex: 1 1 35%;
+}
+
+.upNext .item .img img {
+  width: 100%;
+}
+
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+
+.upNext .item .moreButton {
+  flex: 1 1 5%;
 }
