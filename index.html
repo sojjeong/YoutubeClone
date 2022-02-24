@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/e0b60ee7fa.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+    <title>Youtube</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fab fa-youtube"></i>
+        <span class="title">Youtube</span>
+      </div>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </header>
+
+    <!-- Video Player -->
+    <section class="player">
+      <video controls src="video/intro.mp4"></video>
+    </section>
+
+    <!-- Video info & Up next -->
+    <div class="infoAndUpNext">
+      <section class="info">
+        <div class="metadata">
+          <ul class="hashtags">
+            <li>#SSAFYMATE</li>
+            <li>#SSAFY</li>
+            <li>#Developacito</li>
+          </ul>
+          <div class="titleAndButton">
+            <span class="title clamp">SSAFY MATE : 싸피인들을 위한 팀빌딩 웹사이트 싸피인들을 위한 팀빌딩 웹사이트 싸피인들을 위한 팀빌딩 웹사이트 싸피인들을 위한 팀빌딩 웹사이트</span>
+            <button class="moreButton">
+              <i class="fas fa-caret-down"></i>
+            </button>
+          </div>
+          <span class="views">1M views 1month ago</span>
+        </div>
+
+        <!-- Action button -->
+        <ul class="actions">
+          <li>
+            <button><i class="active fas fa-thumbs-up"></i><span>1K</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-share"></i><span>Share</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-plus"></i><span>Add</span></button>
+          </li>
+          <li>
+            <button><i class="fab fa-font-awesome-flag"></i></button>
+          </li>
+        </ul>
+
+        <!-- channel description -->
+        <div class="channel">
+          <div class="metadata">
+            <img src="image/me.png" alt="me" />
+            <div class="info">
+              <span class="name">쏘뇽</span>
+              <span class="subscribers">1M subscribers</span>
+            </div>
+          </div>
+          <button class="subscribe">subscribe</button>
+        </div>
+      </section>
+
+      <!-- Up Next -->
+      <section class="upNext">
+        <span class="title">Up next</span>
+        <ul>
+          <li class="item">
+            <div class="img">
+              <img src="image/ssafymate.png" alt="" />
+            </div>
+            <div class="itemInfo">
+              <span class="title">싸피 메이트 : 싸피인들을 위한 팀 빌딩 사이트</span>
+              <span class="name">쏘뇽</span>
+              <span class="views">6K views</span>
+            </div>
+            <button class="moreButton"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+          <li class="item">
+            <div class="img">
+              <img src="image/ssafymate.png" alt="" />
+            </div>
+            <div class="itemInfo">
+              <span class="title">싸피 메이트 : 싸피인들을 위한 팀 빌딩 사이트</span>
+              <span class="name">쏘뇽</span>
+              <span class="views">6K views</span>
+            </div>
+            <button class="moreButton"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
