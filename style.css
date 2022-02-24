@@ -8,11 +8,13 @@
   --gray-light-color: #e0e0e0;
 
   /* size */
-  --padding: 12px;
+  --spacing: 12px;
+  --spacing-small: 6px;
   --avatar-size: 36px;
 
   /* font size */
   --font-large: 18px;
+  --font-regular: 16px;
   --font-medium: 14px;
   --font-small: 12px;
   --font-micro: 10px;
@@ -39,13 +41,14 @@ button:focus {
   border: none;
   outline: none;
   cursor: pointer;
+  background-color: #fff;
 }
 
 /* Header */
 header {
   display: flex;
   justify-content: space-between;
-  padding: var(--padding);
+  padding: var(--spacing);
   background-color: var(--black-color);
   color: var(--white-color);
 }
@@ -59,7 +62,7 @@ header .logo i {
 }
 
 header .icons .fa-search {
-  margin-right: var(--padding);
+  margin-right: var(--spacing);
 }
 
 /* Video */
@@ -78,10 +81,11 @@ header .icons .fa-search {
   max-width: 1000px;
 }
 
-.info {
-  padding: var(--padding);
+.infoAndUpNext > .info {
+  padding: var(--spacing);
 }
 
+/* Metadata */
 .info .metadata .hashtags {
   display: flex;
   font-size: var(--font-small);
@@ -89,7 +93,7 @@ header .icons .fa-search {
 }
 
 .info .metadata .hashtags li {
-  margin-right: var(--padding);
+  margin-right: var(--spacing);
 }
 
 .info .metadata .titleAndButton {
@@ -98,43 +102,57 @@ header .icons .fa-search {
 
 .info .metadata .titleAndButton .title {
   font-size: var(--font-medium);
+  margin-right: var(--spacing);
+}
+
+.info .metadata .titleAndButton .title.clamp {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-right: var(--padding);
 }
 
 .info .metadata .titleAndButton .moreButton {
   height: 100%;
+
+  /* 어떤 것을 바꿀지 지정 */
+  transition: transform 300ms ease-in-out;
 }
 
-.info .views {
+.info .metadata .titleAndButton .moreButton.clicked {
+  transform: rotate(180deg);
+}
+
+.info .metadata .views {
   font-size: var(--font-small);
   color: var(--gray-color);
 }
 
+/* Action buttons */
 .info .actions {
   display: flex;
   justify-content: space-around;
+  margin: var(--spacing) 0;
 }
 
 .info .actions button {
   display: flex;
   flex-direction: column;
   font-size: var(--font-small);
+  color: var(--gray-color);
 }
 
 .info .actions button i {
   margin: 0 auto;
-  margin-bottom: calc(var(--padding) / 2);
-  font-size: 16px;
+  margin-bottom: var(--spacing-small);
+  font-size: var(--font-regular);
 }
 
 .info .actions button i.active {
   color: var(--blue-color);
 }
 
+/* chaneel description */
 .info .channel {
   display: flex;
   justify-content: space-between;
@@ -145,17 +163,19 @@ header .icons .fa-search {
 .info .channel .metadata {
   display: flex;
   align-items: center;
-}
-
-.info .channel .metadata .info {
-  display: flex;
-  flex-direction: column;
+  padding: var(--spacing-small) 0;
 }
 
 .info .channel .metadata img {
   width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: 50%;
+  margin-right: var(--spacing);
+}
+
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
 }
 
 .info .channel .metadata .info .name {
@@ -170,35 +190,67 @@ header .icons .fa-search {
 .info .channel .subscribe {
   text-transform: uppercase;
   color: var(--red-color);
+  font-size: var(--font-medium);
 }
 
+/* Up next */
 .upNext {
-  padding: 0 var(--padding);
+  padding: 0 var(--spacing);
 }
 
 /* upNext 의 자식 title만 적용되도록 */
 .upNext > .title {
   font-size: var(--font-medium);
   color: var(--gray-color);
-  margin-bottom: calc(var(--padding) / 2);
+  margin-bottom: var(--spacing-small);
 }
 
 .upNext .item {
   display: flex;
+  margin-top: var(--spacing);
 }
 
 .upNext .item .img {
-  flex: 1 1 35%;
+  flex-basis: 35%;
+  margin-right: var(--spacing);
 }
 
 .upNext .item .img img {
   width: 100%;
 }
 
-.upNext .item .info {
-  flex: 1 1 60%;
+.upNext .item .itemInfo {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .upNext .item .moreButton {
-  flex: 1 1 5%;
+  flex-basis: 5%;
+  height: 100%;
+}
+
+.upNext .item .itemInfo .title {
+  font-size: var(--font-small);
+}
+
+.upNext .item .itemInfo .name,
+.upNext .item .itemInfo .views {
+  font-size: var(--font-micro);
+  color: var(--gray-color);
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+  }
+
+  .upNext {
+    padding: var(--spacing);
+  }
 }
