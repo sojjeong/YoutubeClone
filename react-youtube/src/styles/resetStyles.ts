@@ -2,7 +2,11 @@
 import { css } from "@emotion/react";
 
 const resetStyles = css`
-  html,
+  html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
   body,
   div,
   span,
@@ -104,7 +108,7 @@ const resetStyles = css`
     display: block;
   }
   body {
-    line-height: 1;
+    line-height: 1.5;
   }
   ol,
   ul {
@@ -131,6 +135,12 @@ const resetStyles = css`
   a {
     color: inherit;
     text-decoration: none;
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
   }
 `;
 

@@ -4,7 +4,9 @@ import constants from "../styles/constants";
 const VideoPlayer: React.FC = () => {
   return (
     <VideoSection>
-      <video controls src="../../../video/intro.mp4"></video>
+      <video controls>
+        <source src={require("../resources/intro.mp4")}></source>
+      </video>
     </VideoSection>
   );
 };
